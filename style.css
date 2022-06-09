@@ -1,0 +1,19 @@
+#container {
+    display: inline-block;
+    margin: auto;
+    font-size: 0;  /*removed white space*/
+    
+}
+
+.squareClass {
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: 1px solid black;
+    display: inline-block;
+    
+}
+
+.highlight {
+    background-color: rgba(0%, 0%, 0%);
+}
