@@ -1,8 +1,7 @@
 #container {
-    display: inline-block;
-    margin: auto;
+    margin: 0px auto;
     font-size: 0;  /*removed white space*/
-    
+    text-align: center;
 }
 
 .squareClass {
@@ -10,8 +9,7 @@
     width: 25px;
     background-color: white;
     border: 1px solid black;
-    display: inline-block;
-    
+    display: inline-block;  
 }
 
 .highlight {
