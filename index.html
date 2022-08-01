@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Etch-a-Sketch</title>
+</head>
+<body>
+    <button id="reset">Clear grid</button>
+    <button id="resize">Resize grid</button>
+    <button id="addBlack">Add 10% Black</button>
+    <br>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+
+    //rgb(255,255,255) for white
+    //need to fix/close the gap between each line of the grid
+
+    
+
+
+    const box = document.getElementById("container");
+    let gridNum = 16;
+
+    function gridSize() {
+        for (let i=0; i<gridNum; i++) {
+            const row = document.createElement("div");
+            box.appendChild(row);
+            for (let j=0; j<gridNum; j++) {
+                const square = document.createElement("div");
+                square.setAttribute("class", "squareClass");
+                square.style.opacity = 0.10;
+                row.appendChild(square);
+            }
+        }
+    }
+
+    gridSize();
+
+    /*
+    document.addEventListener("mouseover", function(event) {
+        if (event.target.classList.contains("squareClass")) {
+            event.target.classList.add("highlight");
+        }
+    });
+    */
+
+    /*
+    document.getElementById("reset").addEventListener("click", function() {
+        let resetSquares = document.getElementsByClassName("squareClass");
+        [].forEach.call(resetSquares, function(el) {
+            el.classList.remove("highlight");
+        })
+    });
+    */
+
+    /*
+    
+    document.getElementById("resize").addEventListener("click", function() {
+        const square = document.getElementsByClassName("squareClass");
+        while (square.length > 0) {
+            square[0].parentNode.removeChild(square[0]);
+        }
+        do {
+            gridNum = parseInt(prompt("How many squares?"));
+        } while (typeof gridNum != "number" && gridNum > 100 && gridNum < 1) {
+            gridSize(gridNum);
+        }
+    });
+    */
+    
+
+    document.addEventListener("mouseover", function() {
+        if (event.target.classList.contains("squareClass")) {
+            let opacity = parseFloat(event.target.style.opacity);
+            if (event.target.style.opacity < 1) {
+                console.log(event.target.style.opacity);
+                opacity += 0.10;
+                event.target.style.opacity = opacity;
+                console.log(event.target.style.opacity);
+            }
+        }
+    })
+
+    
+
+</script>
